@@ -2,7 +2,9 @@
   "nodes": {
     "catppuccin": {
       "inputs": {
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": [
+          "nixpkgs"
+        ]
       },
       "locked": {
         "lastModified": 1757997145,
@@ -25,11 +27,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1757997814,
-        "narHash": "sha256-F+1aoG+3NH4jDDEmhnDUReISyq6kQBBuktTUqCUWSiw=",
+        "lastModified": 1758288820,
+        "narHash": "sha256-ubyO7Ly6NSFN5GgNTEuoIavBFMZOMcRchSTIXiDVtAI=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "5820376beb804de9acf07debaaff1ac84728b708",
+        "rev": "e38751933802481b37fee1f9251cbb86e63df381",
         "type": "github"
       },
       "original": {
@@ -48,7 +50,7 @@
         "type": "github"
       },
       "original": {
-        "owner": "NixOS",
+        "owner": "nixos",
         "ref": "nixos-unstable",
         "repo": "nixpkgs",
         "type": "github"
@@ -69,11 +71,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1757984929,
-        "narHash": "sha256-ypOmKARfQr3hNGM7YDHeH1D0hUmXY8/ivSBsZcBmYNQ=",
+        "lastModified": 1758244260,
+        "narHash": "sha256-04RUWI9Chzyvpg71iJ8DSu7v9QWgSMDk7g3ZQC4KPOA=",
         "owner": "NikSneMC",
         "repo": "zen-browser-flake",
-        "rev": "ef9f0b793445e687ab54c7b56171d1a0b327d2e6",
+        "rev": "ed94966c5467c14e8774f942884445d96f4c3e4b",
         "type": "github"
       },
       "original": {
