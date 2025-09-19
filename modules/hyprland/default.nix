@@ -19,6 +19,7 @@ with lib;
 
     extraPortals = with pkgs; [
       xdg-desktop-portal-hyprland
+      xdg-desktop-portal-wlr
       xdg-desktop-portal-gtk
     ];
   };
@@ -44,6 +45,6 @@ with lib;
     xdg-desktop-portal-hyprland
     xdg-desktop-portal-gtk
     mate.mate-polkit
-    gnome.gnome-keyring
+    gnome-keyring
   ];
 }

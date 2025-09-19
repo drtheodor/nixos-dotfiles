@@ -38,7 +38,7 @@ with lib;
 
   programs.zoxide.enable = true;
 
-  programs.rofi-wayland.terminal = "kitty";
+  programs.rofi.terminal = "kitty";
 
   programs.kitty = {
     enable = true;
@@ -53,6 +53,6 @@ with lib;
   home.packages = with pkgs; [
     eza
     jetbrains-mono
-    nerdfonts
+    nerd-fonts.jetbrains-mono
   ];
 }

@@ -8,7 +8,9 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-
+      #./modules/
+      ./modules/amneziawg.nix
+      ./modules/virtualization.nix
       ./modules/general.nix
       ./modules/hyprland
     ];
@@ -40,9 +42,9 @@
   # Is this needed though?
   services.xserver.enable = true;
 
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
-    driSupport32Bit = true;
+    enable32Bit = true;
   };
 
   # Allow unfree packages

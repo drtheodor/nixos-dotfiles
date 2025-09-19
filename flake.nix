@@ -1,9 +1,13 @@
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    catppuccin.url = "github:catppuccin/nix";
+    catppuccin.url = "github:NikSneMC/catppuccin-nix";
     home-manager  = {
       url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    zen-browser = {
+      url = "github:NikSneMC/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

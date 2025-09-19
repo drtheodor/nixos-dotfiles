@@ -22,7 +22,7 @@ RANDOM_PIC="${PICS[$((RANDOM % ${#PICS[@]}))]}"
 RANDOM_PIC_NAME="${#PICS[@]}. random"
 
 # Rofi command
-rofi_command="rofi -show -dmenu -config ~/.config/rofi/config-wallpaper.rasi"
+rofi_command="rofi -show -dmenu" #  -config ~/.config/rofi/config-wallpaper.rasi
 
 menu() {
   for i in "${!PICS[@]}"; do

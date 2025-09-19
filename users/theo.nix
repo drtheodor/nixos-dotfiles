@@ -9,34 +9,24 @@ with lib;
   ];
 
   home.packages = with pkgs; [
-    vesktop
     htop
-    spotify
-    space-station-14-launcher
     steam
-    gnome.gnome-disk-utility
-    kdenlive
+    kdePackages.kdenlive
     vlc
-    onlyoffice-bin
     corefonts
-    gnome-text-editor
     aseprite
     qbittorrent
     alsa-oss
     reaper
-    vivaldi-ffmpeg-codecs
-    oath-toolkit
-    (callPackage ./../pkgs/spoof-dpi {}) 
+    obs-studio
+    krita
+    (inputs.zen-browser.packages.${pkgs.system}.beta.override {
+      iconsDir = "${inputs.assets}/icons/zen-browser";
+    })
   ];
 
-  programs.vivaldi = {
+  programs.vesktop = {
     enable = true;
-    package = pkgs.vivaldi.override {
-      proprietaryCodecs = true;
-      enableWidevine = true;
-    };
-    commandLineArgs = [];
-    extensions = [];
   };
   
   home.stateVersion = "23.11";

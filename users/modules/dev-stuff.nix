@@ -21,9 +21,22 @@ with lib;
     neovide
     vscodium
     jetbrains.idea-community
-    jetbrains.rust-rover
+    (jetbrains.idea-ultimate.override {
+      vmopts = ''
+        --add-opens=java.base/jdk.internal.org.objectweb.asm=ALL-UNNAMED
+        --add-opens=java.base/jdk.internal.org.objectweb.asm.tree=ALL-UNNAMED
+
+        -javaagent:/home/theo/.config/JetBrains/jetbra/ja-netfilter.jar=jetbrains
+      '';
+    })
+    insomnia
+    android-studio
+    #jetbrains.rust-rover
+    
+    # gamedev
     godot_4
 
+    # git
     gh
     gitbutler
     git

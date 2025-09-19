@@ -3,16 +3,16 @@
 with lib;
 
 {
-  nixpkgs.overlays = [
-    (_: final: {
-      wlroots = final.wlroots.overrideAttrs (_: {
-        patches = [
-          ./patches/wlroots-nvidia.patch
-          ./patches/wlroots-screenshare.patch
-        ];
-      });
-    })
-  ];  
+  #nixpkgs.overlays = [
+  #  (_: final: {
+  #    wlroots = final.wlroots.overrideAttrs (_: {
+  #      patches = [
+  #        ./patches/wlroots-nvidia.patch
+  #        ./patches/wlroots-screenshare.patch
+  #      ];
+  #    });
+  #  })
+  #];  
 
   # Works for Wayland as well
   services.xserver.videoDrivers = [ "nvidia" ];
@@ -23,7 +23,11 @@ with lib;
     XDG_SESSION_TYPE = "wayland";
     LIBVA_DRIVER_NAME = "nvidia";
     NVD_BACKEND = "direct";
-    #NIXOS_OZONE_WL = "1";
+
+    QT_AUTO_SCREEN_SCALE_FACTOR = "1";
+    QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
+    QT_QPA_PLATFORMTHEME = "kvantum";
+    QT_STYLE_OVERRIDE="kvantum";
   };
   
   hardware.nvidia = {

@@ -1,4 +1,5 @@
 {
+  "$schema" = "https://raw.githubusercontent.com/ErikReider/SwayNotificationCenter/main/src/configSchema.json";
   positionX = "right";
   positionY = "top";
   notification-icon-size = 48;
@@ -7,7 +8,7 @@
   timeout = 6;
   timeout-low = 4;
   timeout-critical = 0;
-  fit-to-screen = false;
+  fit-to-screen = true;
   notification-window-width = 350;
   keyboard-shortcuts = true;
   image-visibility = "when-available";
@@ -40,6 +41,7 @@
       image-size = 96;
       image-radius = 6;
       blur = false;
+      autohide = true;
     };
   };
 }

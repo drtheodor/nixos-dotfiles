@@ -1,12 +1,14 @@
 {
   bind = [
-    "$mod, F, exec, vivaldi"
+    "$mod, SPACE, exec, rofi -show drun"
+    "$mod, F, exec, flatpak run app.zen_browser.zen"
     "$mod, Q, exec, kitty"
+    "$mod, E, exec, thunar"
+    "$mod SHIFT, A, exec, rofi -show 2fa"
+
     ", Print, exec, grimblast copy area"
     "$mod, C, killactive"
-    "$mod, SPACE, exec, rofi -show drun"
     "$mod, A, fullscreen, 1"
-    "$mod, E, exec, thunar"
     "$mod, Z, fullscreen"
     "$mod, up, movefocus, u"
     "$mod, down, movefocus, d"
@@ -16,7 +18,6 @@
     "$mod SHIFT, down, movewindow, d"
     "$mod SHIFT, left, movewindow, l"
     "$mod SHIFT, right, movewindow, r"
-    "$mod SHIFT, A, exec, rofi -show 2fa"
   ]
   ++ (
     builtins.concatLists(builtins.genList(
@@ -61,5 +62,17 @@
 
   input = {
     sensitivity = 0.5;
+  };
+
+  misc = {
+    disable_hyprland_logo = true;
+    disable_splash_rendering = true;
+    force_default_wallpaper = 0;
+    anr_missed_pings = 5;
+  };
+  
+  ecosystem = {
+    no_update_news = true;
+    no_donation_nag = true; # i'm poor :(
   };
 }

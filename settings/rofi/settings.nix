@@ -7,7 +7,7 @@
   hide-scrollbar = true;
   display-drun = "   Apps ";
   display-run = "   Run ";
-  display-window = " 﩯  Window ";
+  display-window = "   Window ";
   display-2fa = "  2FA ";
   sidebar-mode = true;
   location = 0;

@@ -6,6 +6,19 @@ with lib;
   catppuccin = {
     enable = true;
     flavor = "mocha";
+    accent = "lavender";
+
+    waybar.enable = true;
+    cursors.enable = true;
+    vesktop.enable = true;
+    kvantum.enable = true;
+    rofi.enable = true;
+    gtk.enable = true;
+
+    swaync = {
+      enable = true;
+      font = "JetBrainsMono Nerd Font Propo";
+    };
   };
 
   programs.oh-my-posh.useTheme = "catppuccin";
@@ -80,15 +93,50 @@ with lib;
 
     decoration = {
       rounding = 10;
+      blur = {
+        enabled = false;
+      };
+      shadow = {
+        enabled = false;
+      };
     };
   };
 
-  services.swaync.style = readFile ./swaync.css;
-  programs.rofi-wayland.theme = readFile ./rofi.css;
+  # FIXME?
+  #services.swaync.style = readFile ./swaync.css;
+  #programs.rofi.theme = readFile ./rofi.css;
   programs.waybar.style = readFile ./waybar.css;
+
+  home = {
+    packages = with pkgs; [
+      numix-icon-theme-circle
+    ];
+    pointerCursor.size = 24;
+  };
 
   gtk = {
     enable = true;
-    catppuccin.enable = true;
+
+    font = {
+      name = "JetBrainsMono Nerd Font Propo";
+      package = pkgs.nerd-fonts.jetbrains-mono;
+      size = 10;
+    };
+
+    gtk2.configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
+
+    iconTheme = {
+      name = "Colloid-Catppuccin-Dark";
+      package = pkgs.colloid-icon-theme.override {
+        schemeVariants = ["catppuccin"];
+        colorVariants = ["default"];
+      };
+    };
+  };
+
+  qt = {
+    enable = true;
+    platformTheme.name = "kvantum";
+    style.name = "kvantum";
   };
 }

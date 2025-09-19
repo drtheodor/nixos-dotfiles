@@ -20,17 +20,21 @@ in
       exec-once = [
         "${pkgs.mate.mate-polkit}/libexec/polkit-mate-authentication-agent-1"
         "${pkgs.waybar}/bin/waybar"
-        "${pkgs.swaynotificationcenter}/bin/swaync --style $HOME/.config/swaync/style.css"
-        "${pkgs.swww}/bin/swww init"
-        "${pkgs.callPackage ./../../pkgs/spoof-dpi {}}/bin/spoof-dpi --port 8888 --enable-doh --window-size 0 --timeout 10000"
+        "${pkgs.swww}/bin/swww restore"
       ];
+
+      ecosystem = {
+        no_update_news = true;
+      };
 
       "$mod" = "SUPER";
     } // settings);
   };
 
+  # Wallpapers!
+  services.swww.enable = true;
+
   home.packages = with pkgs; [
-    swww # Wallpapers!
     grim
     grimblast
     libnotify
