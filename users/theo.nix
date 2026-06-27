@@ -3,10 +3,12 @@
 with lib;
 
 {
-  imports = with inputs; [
+  imports = [
     ./modules/dev-stuff.nix
     ./modules/minecraft.nix
   ];
+  
+  fonts.fontconfig.enable = true;
 
   home.packages = with pkgs; [
     htop
@@ -20,9 +22,7 @@ with lib;
     reaper
     obs-studio
     krita
-    (inputs.zen-browser.packages.${pkgs.system}.beta.override {
-      iconsDir = "${inputs.assets}/icons/zen-browser";
-    })
+    inputs.zen-browser.packages.${pkgs.system}.beta
   ];
 
   programs.vesktop = {

@@ -34,7 +34,6 @@ with lib;
 
   services.displayManager.sddm = {
     enable = true;
-    package = pkgs.libsForQt5.sddm;
     wayland.enable = true;
     autoNumlock = true;
   };

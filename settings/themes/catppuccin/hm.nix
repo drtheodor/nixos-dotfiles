@@ -12,7 +12,7 @@ with lib;
     cursors.enable = true;
     vesktop.enable = true;
     kvantum.enable = true;
-    rofi.enable = true;
+    rofi.enable = false; # This SUCKS
     gtk.enable = true;
 
     swaync = {
@@ -104,8 +104,11 @@ with lib;
 
   # FIXME?
   #services.swaync.style = readFile ./swaync.css;
-  #programs.rofi.theme = readFile ./rofi.css;
   programs.waybar.style = readFile ./waybar.css;
+  
+  programs.rofi.theme = "catppuccin";
+
+  xdg.dataFile."rofi/themes/catppuccin.rasi".source = ./rofi.css;
 
   home = {
     packages = with pkgs; [

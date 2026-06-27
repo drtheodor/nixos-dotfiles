@@ -1,11 +1,11 @@
-{ pkgs, config, lib, inputs, ... }:
+{ pkgs, config, lib, ... }:
 
 with lib;
 
 {
   home.packages = with pkgs; [
-    glfw-wayland-minecraft
+    glfw3-minecraft
     prismlauncher
-    blockbench-electron
+    blockbench
   ];
 }

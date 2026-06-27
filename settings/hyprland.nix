@@ -1,7 +1,7 @@
 {
   bind = [
     "$mod, SPACE, exec, rofi -show drun"
-    "$mod, F, exec, flatpak run app.zen_browser.zen"
+    "$mod, F, exec, zen"
     "$mod, Q, exec, kitty"
     "$mod, E, exec, thunar"
     "$mod SHIFT, A, exec, rofi -show 2fa"

@@ -1,10 +1,10 @@
-{ config, pkgs, inputs, ... }:
+{ pkgs, config, lib, inputs, ... }:
 
 let
   settings = import ./../settings/general.nix;
 in
 {
-  home-manager.users."${settings.userName}" = import ../users/${settings.userName}.nix;
+  home-manager.users."${settings.userName}" = import ../users/${settings.userName}.nix { inherit pkgs config lib inputs; };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users."${settings.userName}" = {
